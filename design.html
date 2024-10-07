@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Select Role</title>
+    <style>
+        /* Color variables from the landing page */
+        :root {
+            --primary-color: #2c3e50;
+            --secondary-color: #34495e;
+            --accent-color: #3498db;
+            --button-bg: #e74c3c;
+            --button-hover-bg: #c0392b;
+            --background-gradient: -webkit-linear-gradient(20deg, #8ea8c3, #2be3e9);
+            --text-color: #333333;
+            --light-text: #ecf0f1;
+        }
+
+        body {
+            font-family: 'Montserrat', sans-serif;
+            background: var(--background-gradient);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            padding: 0 15px;
+        }
+
+        .container {
+            display: flex;
+            justify-content: space-around;
+            width: 80%;
+            max-width: 1000px;
+            flex-wrap: wrap; /* Allow wrapping for smaller screens */
+            text-align: center;
+        }
+
+        .header {
+            font-size: 36px;
+            text-align: center;
+            width: 100%;
+            margin-bottom: 40px;
+            animation: fadeIn 2.5s ease;
+        }
+
+        .box {
+            width: 200px;
+            height: 300px;
+            border: 2px solid var(--accent-color);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            border-radius: 30px;
+            background-color: var(--primary-color);
+            transition: background-color 0.3s ease;
+            animation: fadeIn 2s ease-out;
+            margin: 20px;
+        }
+
+        .box img {
+            width: 80px;
+            height: 80px;
+            margin-bottom: 20px;
+        }
+
+        .box h3 {
+            color: var(--light-text);
+            font-size: 24px;
+        }
+
+        .box.faculty h3, .box.student h3 {
+            background-color: var(--accent-color);
+            padding: 8px;
+            border-radius: 15px;
+        }
+
+        .box:hover {
+            background-color: var(--button-hover-bg);
+        }
+
+        @keyframes fadeIn {
+            0% {
+                opacity: 0;
+            }
+            100% {
+                opacity: 1;
+            }
+        }
+
+        /* Mobile devices (up to 768px) */
+        @media (max-width: 768px) {
+            .container {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .box {
+                width: 80%; /* Make boxes full-width on smaller screens */
+                max-width: 300px;
+            }
+
+            .box img {
+                width: 60px;
+                height: 60px;
+            }
+
+            .box h3 {
+                font-size: 20px;
+            }
+
+            .header {
+                font-size: 28px;
+                margin-bottom: 20px;
+            }
+        }
+
+        /* Extra small devices (up to 480px) */
+        @media (max-width: 480px) {
+            body {
+                padding: 0 10px;
+            }
+
+            .box {
+                width: 90%; /* Slightly larger width for very small devices */
+                max-width: 250px;
+            }
+
+            .box img {
+                width: 50px;
+                height: 50px;
+            }
+
+            .box h3 {
+                font-size: 18px;
+            }
+
+            .header {
+                font-size: 24px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h2 class="header"><span>Select Your Role</span></h2>
+        <div class="box faculty">
+            <img src="employee.png" alt="Faculty Icon">
+            <h3><a href="index.html" style="color: #ecf0f1;">Faculty</a></h3>
+        </div>
+        <div class="box student">
+            <img src="students.png" alt="Student Icon">
+            <h3><a href="index.html" style="color: #ecf0f1;">Student</a></h3>
+        </div>
+    </div>
+</body>
+</html>
